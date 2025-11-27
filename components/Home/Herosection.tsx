@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
-
+//commit
 export default function HeroSection() {
   const [isVipSelected, setIsVipSelected] = useState(false);
   const [selectedCard, setSelectedCard] = useState<"premium" | "active" | "vip">("premium");

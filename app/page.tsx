@@ -25,6 +25,9 @@ export default function Home() {
         <Separator className="bg-blue-500 h-0.5" />
       </div>
       <InstagramGrowthSection />
+      <div className="w-full bg-black">
+        <Separator className="bg-blue-500 h-0.5" />
+      </div>
       <WhyInstagramFollowers />
       {/* Separator */}
       <div className="w-full bg-black">

@@ -44,139 +44,49 @@ export default function FAQSection() {
   };
 
   return (
-    <div
-      className="flex flex-col items-center mx-auto"
-      style={{
-        width: "932px",
-        maxWidth: "100%",
-      }}
-    >
+    <div className="flex flex-col items-center mx-auto w-full max-w-[932px] px-4">
       {/* Header Section */}
-      <div
-        className="flex flex-col items-center"
-        style={{
-          width: "813px",
-          maxWidth: "100%",
-        }}
-      >
+      <div className="flex flex-col items-center w-full max-w-[813px]">
         {/* Heading */}
-        <h2
-          className="font-inter text-center capitalize"
-          style={{
-            fontFamily: "Inter",
-            fontWeight: 700,
-            fontSize: "48px",
-            lineHeight: "58px",
-            color: "#FFFFFF",
-            width: "813px",
-            maxWidth: "100%",
-            textAlign: "center",
-            textTransform: "capitalize",
-          }}
-        >
+        <h2 className="font-inter font-bold text-center capitalize text-[32px] md:text-[48px] leading-[40px] md:leading-[58px] text-white w-full">
           Frequently Asked Questions
         </h2>
 
         {/* Description */}
-        <p
-          className="font-inter text-center"
-          style={{
-            fontFamily: "Inter",
-            fontWeight: 400,
-            fontSize: "16px",
-            lineHeight: "30px",
-            color: "#99A1AF",
-            width: "550px",
-            maxWidth: "100%",
-            textAlign: "center",
-            marginTop: "30px",
-            marginBottom: "40px",
-          }}
-        >
+        <p className="font-inter font-normal text-center text-base leading-[30px] text-[#99A1AF] w-full max-w-[550px] mt-[30px] mb-10">
           Have questions? We&apos;ve got answers. Here are some of the most common queries about our Instagram Followers
         </p>
       </div>
 
       {/* FAQ Items */}
-      <div
-        className="flex flex-col items-start"
-        style={{
-          width: "932px",
-          maxWidth: "100%",
-          gap: "15px",
-        }}
-      >
+      <div className="flex flex-col items-start w-full max-w-[932px] gap-[15px]">
         {faqs.map((faq, index) => (
           <div
             key={faq.id}
-            className="relative cursor-pointer overflow-hidden"
-            style={{
-              width: "932px",
-              maxWidth: "100%",
-              opacity: 1,
-              backgroundColor: "rgba(255, 255, 255, 0.05)",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
-              borderRadius: "15px",
-              transition: "all 0.3s ease-in-out",
-            }}
+            className="relative cursor-pointer overflow-hidden w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] rounded-[15px] transition-all duration-300"
             onClick={() => toggleFAQ(index)}
           >
-            <div
-              className="flex items-center justify-between"
-              style={{
-                padding: "27px 21px",
-                width: "932px",
-                height: "71px",
-              }}
-            >
-              <h3
-                className="font-inter capitalize flex-1"
-                style={{
-                  fontFamily: "Inter",
-                  fontWeight: 600,
-                  fontSize: "22px",
-                  lineHeight: "58px",
-                  color: "#FFFFFF",
-                  textTransform: "capitalize",
-                }}
-              >
+            <div className="flex items-center justify-between p-[27px_21px] w-full min-h-[71px]">
+              <h3 className="font-inter font-semibold capitalize flex-1 min-w-0 text-white text-base md:text-[22px] leading-6 md:leading-[32px] pr-2.5">
                 {faq.question}
               </h3>
               <ChevronDown
-                className="shrink-0"
-                style={{
-                  width: "12px",
-                  height: "16px",
-                  color: "#FFFFFF",
-                  opacity: 0.7,
-                  transform: openIndex === index ? "rotate(180deg)" : "rotate(0deg)",
-                  marginLeft: "10px",
-                  transition: "transform 0.3s ease-in-out",
-                }}
+                className={`shrink-0 w-3 h-4 text-white opacity-70 ml-2.5 transition-transform duration-300 ${
+                  openIndex === index ? "rotate-180" : "rotate-0"
+                }`}
               />
             </div>
             <div
-              className="overflow-hidden"
-              style={{
-                maxHeight: openIndex === index ? "1000px" : "0px",
-                transition: "max-height 0.3s ease-in-out, padding 0.3s ease-in-out",
-                paddingTop: openIndex === index ? "0px" : "0px",
-                paddingLeft: "21px",
-                paddingRight: "21px",
-                paddingBottom: openIndex === index ? "27px" : "0px",
-              }}
+              className={`overflow-hidden transition-all duration-300 px-[21px] ${
+                openIndex === index
+                  ? "max-h-[1000px] pb-[27px]"
+                  : "max-h-0 pb-0"
+              }`}
             >
               <p
-                className="font-inter"
-                style={{
-                  fontFamily: "Inter",
-                  fontWeight: 400,
-                  fontSize: "16px",
-                  lineHeight: "26px",
-                  color: "#99A1AF",
-                  opacity: openIndex === index ? 1 : 0,
-                  transition: "opacity 0.3s ease-in-out",
-                }}
+                className={`font-inter font-normal text-base leading-[26px] text-[#99A1AF] transition-opacity duration-300 ${
+                  openIndex === index ? "opacity-100" : "opacity-0"
+                }`}
               >
                 {faq.answer}
               </p>
@@ -187,4 +97,3 @@ export default function FAQSection() {
     </div>
   );
 }
-

@@ -1,8 +1,23 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 
 export default function WhyEagleLikes() {
+  const cardsScrollRef = useRef<HTMLDivElement>(null);
+  const logosScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollCardsLeft = () => {
+    if (cardsScrollRef.current) {
+      cardsScrollRef.current.scrollBy({ left: -335, behavior: "smooth" });
+    }
+  };
+
+  const scrollCardsRight = () => {
+    if (cardsScrollRef.current) {
+      cardsScrollRef.current.scrollBy({ left: 335, behavior: "smooth" });
+    }
+  };
   const features = [
     {
       id: 1,
@@ -67,6 +82,8 @@ export default function WhyEagleLikes() {
   return (
     <div className="relative w-full bg-black">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-28">
+      <div className="absolute -right-100 top-120 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+
         {/* Eagle Likes is seen on... Section */}
         <div className="flex flex-col items-center mb-16" style={{ gap: "49px" }}>
           <span
@@ -81,9 +98,13 @@ export default function WhyEagleLikes() {
           >
             Eagle Likes is seen on...
           </span>
-          <div className="flex flex-row items-center justify-center" style={{ gap: "40.96px", width: "1065px", maxWidth: "100%", flexWrap: "nowrap" }}>
+          <div 
+            ref={logosScrollRef}
+            className="flex flex-row items-center justify-center gap-[40.96px] w-full lg:w-[1065px] max-w-full overflow-x-auto scrollbar-hide"
+            style={{ flexWrap: "nowrap" }}
+          >
             {logos.map((logo, index) => (
-              <div key={index} style={{ width: `${logo.width}px`, height: `${logo.height}px`, flexShrink: 0 }}>
+              <div key={index} className="shrink-0" style={{ width: `${logo.width}px`, height: `${logo.height}px` }}>
                 <Image
                   src={logo.src}
                   alt={logo.name}
@@ -97,90 +118,56 @@ export default function WhyEagleLikes() {
         </div>
 
         {/* Why Eagle Likes? Section */}
-        <div className="flex flex-col items-center" style={{ width: "1078px", maxWidth: "100%", gap: "50px", margin: "0 auto" }}>
+        <div className="flex flex-col items-center gap-[30px] min-[600px]:gap-[50px] w-full min-[600px]:w-[1078px] max-w-full mx-auto">
           {/* Heading */}
-          <h2
-            className="font-inter font-bold text-center capitalize"
-            style={{
-              fontSize: "48px",
-              lineHeight: "100px",
-              letterSpacing: "0px",
-              textTransform: "capitalize",
-              width: "100%",
-            }}
-          >
-            <span style={{ color: "#FFFFFF" }}>Why </span>
-            <span
-              style={{
-                background:
-                  "linear-gradient(90deg, #018DFF 48%, #00FFFF 85%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              Eagle Likes?
-            </span>
-          </h2>
+          <div className="flex flex-col font-open-sans font-semibold min-[600px]:h-[44px] h-[24px] justify-center leading-0 shrink-0 text-center text-white w-full">
+            <h2 className="font-inter font-bold min-[600px]:leading-[100px] min-[600px]:text-[48px] leading-[88px] text-[30px] whitespace-pre-wrap capitalize">
+              <span className="text-white">why </span>
+              <span
+                className="bg-clip-text"
+                style={{ 
+                  WebkitTextFillColor: "transparent",
+                  backgroundImage: "linear-gradient(90deg, #018DFF 48%, #00FFFF 85%)"
+                }}
+              >
+                Eagle Likes?
+              </span>
+            </h2>
+          </div>
 
-          {/* Features Grid */}
-          <div className="flex flex-col items-start" style={{ width: "1078px", maxWidth: "100%", gap: "20px" }}>
-            {/* Row 1 */}
-            <div className="flex flex-row items-center flex-wrap justify-center" style={{ width: "100%", gap: "20px" }}>
-              {features.slice(0, 3).map((feature) => (
+          {/* Features Grid - Mobile: Horizontal Scroll, Desktop: Wrap */}
+          <div className="flex flex-col items-start gap-[15.968px] min-[600px]:gap-[20px] w-full min-[600px]:w-[1078px] max-w-full relative">
+            {/* Mobile: Horizontal Scroll Container */}
+            <div 
+              ref={cardsScrollRef}
+              className="flex gap-[15.968px] min-[600px]:hidden items-center w-full overflow-x-auto scrollbar-hide"
+            >
+              {features.map((feature) => (
                 <div
                   key={feature.id}
-                  className="relative"
-                  style={{
-                    width: "346px",
-                    height: "357px",
-                    backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                    borderRadius: "40px",
-                  }}
+                  className="relative shrink-0 bg-[rgba(255,255,255,0.05)] border-[0.798px] border-[rgba(255,255,255,0.15)] border-solid h-[285.029px] rounded-[40px] w-[319.36px] shadow-[0px_0px_6.387px_0px_rgba(0,0,0,0.1)]"
                 >
-                  <div className="flex flex-col items-center" style={{ padding: "26px 0", width: "281.99px", margin: "0 auto" }}>
+                  <div className="box-border flex flex-col gap-[19.162px] items-center mx-auto mt-[19.96px] w-[260.278px]">
                     {/* Icon */}
-                    <div
-                      className="flex items-center justify-center"
-                      style={{ width: "86px", height: "86px", marginBottom: "24px" }}
-                    >
+                    <div className="relative shrink-0 size-[68.662px]">
                       {feature.icon && (
                         <Image
                           src={feature.icon}
                           alt={feature.title}
-                          width={86}
-                          height={86}
-                          className="object-contain"
+                          width={69}
+                          height={69}
+                          className="object-contain w-full h-full"
                         />
                       )}
                     </div>
 
                     {/* Content */}
-                    <div className="flex flex-col items-center" style={{ width: "281.99px" }}>
-                      <h3
-                        className="font-inter font-semibold text-center capitalize"
-                        style={{
-                          fontSize: "23px",
-                          lineHeight: "35px",
-                          letterSpacing: "0px",
-                          color: "#FFFFFF",
-                          textTransform: "capitalize",
-                          marginBottom: "28px",
-                        }}
-                      >
-                        {feature.title}
+                    <div className="flex flex-col gap-[22.355px] items-center leading-0 not-italic relative shrink-0 text-center w-full">
+                      <h3 className="capitalize flex flex-col font-open-sans font-semibold justify-center relative shrink-0 text-[20.758px] text-white">
+                        <span className="leading-[27.944px] whitespace-pre-wrap">{feature.title}</span>
                       </h3>
-                      <p
-                        className="font-inter font-normal text-center"
-                        style={{
-                          fontSize: "15px",
-                          lineHeight: "26.03px",
-                          letterSpacing: "0px",
-                          color: "#99A1AF",
-                        }}
-                      >
-                        {feature.description}
+                      <p className="flex flex-col font-open-sans font-normal justify-center relative shrink-0 text-[#99a1af] text-[11.976px] w-full">
+                        <span className="leading-[20.785px] whitespace-pre-wrap">{feature.description}</span>
                       </p>
                     </div>
                   </div>
@@ -188,67 +175,99 @@ export default function WhyEagleLikes() {
               ))}
             </div>
 
-            {/* Row 2 */}
-            <div className="flex flex-row items-center flex-wrap justify-center" style={{ width: "100%", gap: "20px" }}>
-              {features.slice(3, 6).map((feature) => (
-                <div
-                  key={feature.id}
-                  className="relative"
-                  style={{
-                    width: "346px",
-                    height: "357px",
-                    backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    border: "1px solid rgba(255, 255, 255, 0.15)",
-                    borderRadius: "40px",
-                  }}
-                >
-                  <div className="flex flex-col items-center" style={{ padding: "25px 0", width: "281.99px", margin: "0 auto" }}>
-                    {/* Icon */}
-                    <div
-                      className="flex items-center justify-center"
-                      style={{ width: "86px", height: "86px", marginBottom: "24px" }}
-                    >
-                      {feature.icon && (
-                        <Image
-                          src={feature.icon}
-                          alt={feature.title}
-                          width={86}
-                          height={86}
-                          className="object-contain"
-                        />
-                      )}
-                    </div>
+            {/* Desktop: Wrap Layout */}
+            <div className="hidden min-[600px]:flex flex-col items-start gap-[20px] w-full">
+              {/* Row 1 */}
+              <div className="flex gap-[20px] items-center w-full flex-wrap">
+                {features.slice(0, 3).map((feature) => (
+                  <div
+                    key={feature.id}
+                    className="relative shrink-0 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] border-solid h-[357px] rounded-[40px] w-full min-[1127px]:w-[346px]"
+                  >
+                    <div className="box-border flex flex-col gap-[24px] items-center mx-auto mt-[26px] w-full px-4">
+                      {/* Icon */}
+                      <div className="relative shrink-0 size-[86px]">
+                        {feature.icon && (
+                          <Image
+                            src={feature.icon}
+                            alt={feature.title}
+                            width={86}
+                            height={86}
+                            className="object-contain w-full h-full"
+                          />
+                        )}
+                      </div>
 
-                    {/* Content */}
-                    <div className="flex flex-col items-center" style={{ width: "281.99px" }}>
-                      <h3
-                        className="font-inter font-semibold text-center capitalize"
-                        style={{
-                          fontSize: "23px",
-                          lineHeight: "35px",
-                          letterSpacing: "0px",
-                          color: "#FFFFFF",
-                          textTransform: "capitalize",
-                          marginBottom: "28px",
-                        }}
-                      >
-                        {feature.title}
-                      </h3>
-                      <p
-                        className="font-inter font-normal text-center"
-                        style={{
-                          fontSize: "15px",
-                          lineHeight: "26.03px",
-                          letterSpacing: "0px",
-                          color: "#99A1AF",
-                        }}
-                      >
-                        {feature.description}
-                      </p>
+                      {/* Content */}
+                      <div className="flex flex-col gap-[28px] items-center leading-0 not-italic relative shrink-0 text-center w-full">
+                        <h3 className="capitalize flex flex-col font-inter font-semibold justify-center relative shrink-0 text-[23px] text-white">
+                          <span className="leading-[35px] whitespace-pre-wrap">{feature.title}</span>
+                        </h3>
+                        <p className="flex flex-col font-inter font-normal justify-center relative shrink-0 text-[#99a1af] text-[15px] w-full">
+                          <span className="leading-[26.034px] whitespace-pre-wrap">{feature.description}</span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Row 2 */}
+              <div className="flex gap-[20px] items-center w-full flex-wrap">
+                {features.slice(3, 6).map((feature) => (
+                  <div
+                    key={feature.id}
+                    className="relative shrink-0 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] border-solid h-[357px] rounded-[40px] w-full min-[1127px]:w-[346px]"
+                  >
+                    <div className="box-border flex flex-col gap-[24px] items-center mx-auto mt-[25px] w-full px-4">
+                      {/* Icon */}
+                      <div className="relative shrink-0 size-[86px]">
+                        {feature.icon && (
+                          <Image
+                            src={feature.icon}
+                            alt={feature.title}
+                            width={86}
+                            height={86}
+                            className="object-contain w-full h-full"
+                          />
+                        )}
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex flex-col gap-[28px] items-center leading-0 not-italic relative shrink-0 text-center w-full">
+                        <h3 className="capitalize flex flex-col font-inter font-semibold justify-center relative shrink-0 text-[23px] text-white">
+                          <span className="leading-[35px] whitespace-pre-wrap">{feature.title}</span>
+                        </h3>
+                        <p className="flex flex-col font-inter font-normal justify-center relative shrink-0 text-[#99a1af] text-[15px] w-full">
+                          <span className="leading-[26.034px] whitespace-pre-wrap">{feature.description}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Navigation Buttons */}
+            <div className="flex gap-[6.643px] items-center justify-center min-[600px]:hidden mt-4 w-full">
+              <button 
+                onClick={scrollCardsLeft}
+                className="flex items-center justify-center relative shrink-0 size-[27.679px] bg-black border border-[rgba(255,255,255,0.4)] rounded-full"
+                aria-label="Scroll left"
+              >
+                <svg width="14" height="17" viewBox="0 0 14 17" fill="none">
+                  <path d="M5 8.5L9 4.5L9 12.5L5 8.5Z" fill="rgba(255,255,255,0.4)" />
+                </svg>
+              </button>
+              <button 
+                onClick={scrollCardsRight}
+                className="flex items-center justify-center relative shrink-0 size-[27.679px] bg-[#018DFF] rounded-full"
+                aria-label="Scroll right"
+              >
+                <svg width="14" height="17" viewBox="0 0 14 17" fill="none">
+                  <path d="M9 8.5L5 4.5L5 12.5L9 8.5Z" fill="white" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>

@@ -16,6 +16,34 @@ export default function HeroSection() {
         marginTop: "0px",
       }}
     >
+        <div className="absolute -top-80 left-260 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+        <div className="absolute -left-60 top-30 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+        <div className="absolute -right-70 bottom-60 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+
+        <Image
+          src="/herosection-grid.svg"
+          alt="Grid"
+          width={800}
+          height={800}
+          className="absolute left-210 top-24  z-1"
+        />
+
+        <Image
+          src="/herosection-grid-left-side.svg"
+          alt="Grid left"
+          width={170}
+          height={150}
+          className="absolute left-0 top-50 z-1 brightness-0 invert"
+        />
+
+        <Image
+          src="/herosection-grid-right-side.svg"
+          alt="Grid right"
+          width={150}
+          height={150}
+          className="absolute right-0 z-1"
+        />
+
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -25,33 +53,6 @@ export default function HeroSection() {
       />
       <div className="relative z-10 mx-auto max-w-7xl px-6 ">
         {/* Ellipse images */}
-        <div className="absolute -top-90 left-90 -z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
-        <div className="absolute -left-95 top-30 -z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
-        <div className="absolute -right-130 bottom-40 -z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
-
-        <Image
-          src="/herosection-grid.svg"
-          alt="Grid"
-          width={800}
-          height={800}
-          className="absolute top-30 left-50  z-1"
-        />
-
-        <Image
-          src="/herosection-grid-left-side.svg"
-          alt="Grid left"
-          width={170}
-          height={150}
-          className="absolute -left-20 top-80 z-1 brightness-0 invert"
-        />
-
-        <Image
-          src="/herosection-grid-right-side.svg"
-          alt="Grid right"
-          width={150}
-          height={150}
-          className="absolute -right-20 top-20 z-1"
-        />
 
         {/* Main Content */}
         <div className="relative z-10 flex flex-col items-center gap-6 w-full max-w-5xl mx-auto">

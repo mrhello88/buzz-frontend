@@ -41,7 +41,7 @@ export default function Navbar() {
             <NavigationMenuList className="flex items-center justify-center gap-6 min-[1152px]:gap-[24px]">
               {/* Tiktok dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:rotate-270! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
+                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
                   <span className="h-[12px] flex items-center justify-center">TIKTOK</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -63,7 +63,7 @@ export default function Navbar() {
 
               {/* Instagram dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:rotate-270! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
+                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
                   <span className="h-[12px] flex items-center justify-center">INSTAGRAM</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -87,7 +87,7 @@ export default function Navbar() {
 
               {/* YouTube dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:rotate-270! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
+                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
                   <span className="h-[12px] flex items-center justify-center">YOUTUBE</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -109,7 +109,7 @@ export default function Navbar() {
 
               {/* Facebook dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:rotate-270! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
+                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
                   <span className="h-[12px] flex items-center justify-center">FACEBOOK</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -133,7 +133,7 @@ export default function Navbar() {
 
               {/* Twitter dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:rotate-270! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
+                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
                   <span className="h-[12px] flex items-center justify-center">TWITTER (X)</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -155,7 +155,7 @@ export default function Navbar() {
 
               {/* Blog dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:rotate-270! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
+                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
                   <span className="h-[12px] flex items-center justify-center">BLOG</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -177,7 +177,7 @@ export default function Navbar() {
 
               {/* Contact dropdown */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:rotate-270! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
+                <NavigationMenuTrigger className="bg-transparent px-0 py-0 h-auto font-['Open_Sans',sans-serif] font-normal text-[16px] leading-0 text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent inline-flex items-end gap-[10px] [&>svg]:w-[10px]! [&>svg]:h-[14px]! [&>svg]:shrink-0! [&>svg]:ml-0! [&>svg]:relative! [&>svg]:top-[2px]!">
                   <span className="h-[12px] flex items-center justify-center">CONTACT US</span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>

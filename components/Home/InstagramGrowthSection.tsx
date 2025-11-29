@@ -19,13 +19,17 @@ export default function InstagramGrowthSection() {
   return (
     <>
       <section className="relative w-full bg-black py-24 sm:py-32">
+      <div className="absolute -left-90 top-120 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+      <div className="absolute -right-90 top-300 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            {/* Left Side - Image with Floating Icons */}
-            <div className="relative w-full lg:w-1/2 flex justify-center items-center">
+       
+          <div className="flex flex-col min-[1024px]:flex-row items-center gap-12 min-[1024px]:gap-16">
+            {/* Image Section - Desktop: Left, Mobile: Second */}
+            <div className="relative w-full min-[1024px]:w-1/2 flex justify-center items-center order-2 min-[1024px]:order-1">
               <div
-                className="relative w-full max-w-[400px] mt-30"
-                style={{ height: "500px" }}
+                className="relative w-full max-w-[342px] min-[1024px]:max-w-[400px]"
+                style={{ height: "auto", minHeight: "400px" }}
               >
                 {/* Gradient Background Blur */}
                 <div
@@ -37,7 +41,7 @@ export default function InstagramGrowthSection() {
                 />
 
                 {/* Main Image Container */}
-                <div className="relative z-10 w-full h-full">
+                <div className="relative z-10 w-full h-full overflow-visible">
                   <div
                     className="w-full h-full rounded-[40px] overflow-hidden"
                     style={{
@@ -56,16 +60,16 @@ export default function InstagramGrowthSection() {
                     />
                   </div>
 
-                  {/* Floating Social Media Icons - Hidden on mobile, visible on larger screens */}
-                  <div className="hidden md:block">
+                  {/* Floating Social Media Icons */}
+                  <div>
                     {/* Instagram Icon - Top Left */}
                     <div
                       className="absolute z-20 flex items-center justify-center"
                       style={{
-                        width: "64.79px",
-                        height: "64.79px",
-                        left: "31.61px",
-                        top: "-35.23px",
+                        width: "clamp(40px, 8vw, 64.79px)",
+                        height: "clamp(40px, 8vw, 64.79px)",
+                        left: "clamp(20px, 7.5%, 31.61px)",
+                        top: "clamp(-25px, -8%, -35.23px)",
                         background:
                           "linear-gradient(135deg, #9810FA 0%, #E60076 100%)",
                         borderRadius: "14px",
@@ -83,10 +87,10 @@ export default function InstagramGrowthSection() {
                     <div
                       className="absolute z-20 flex items-center justify-center"
                       style={{
-                        width: "44.55px",
-                        height: "44.55px",
-                        left: "-33px",
-                        top: "158.82px",
+                        width: "clamp(30px, 5.5vw, 44.55px)",
+                        height: "clamp(30px, 5.5vw, 44.55px)",
+                        left: "clamp(-25px, -8%, -33px)",
+                        top: "clamp(100px, 30%, 158.82px)",
                         background:
                           "linear-gradient(135deg, #F6339A 0%, #FF2056 100%)",
                         borderRadius: "50%",
@@ -104,10 +108,10 @@ export default function InstagramGrowthSection() {
                     <div
                       className="absolute z-20 flex items-center justify-center"
                       style={{
-                        width: "65.87px",
-                        height: "65.87px",
-                        left: "-64.93px",
-                        top: "248.27px",
+                        width: "clamp(42px, 8.2vw, 65.87px)",
+                        height: "clamp(42px, 8.2vw, 65.87px)",
+                        left: "clamp(-40px, -12%, -64.93px)",
+                        top: "clamp(160px, 48%, 248.27px)",
                         background:
                           "linear-gradient(135deg, #2B7FFF 0%, #155DFC 100%)",
                         borderRadius: "14px",
@@ -125,10 +129,10 @@ export default function InstagramGrowthSection() {
                     <div
                       className="absolute z-20 flex items-center justify-center"
                       style={{
-                        width: "44.05px",
-                        height: "44.05px",
-                        left: "15.98px",
-                        top: "263.81px",
+                        width: "clamp(30px, 5.5vw, 44.05px)",
+                        height: "clamp(30px, 5.5vw, 44.05px)",
+                        left: "clamp(10px, 4%, 25px)",
+                        top: "clamp(170px, 52%, 300px)",
                         background:
                           "linear-gradient(135deg, #00C950 0%, #00BC7D 100%)",
                         borderRadius: "50%",
@@ -144,12 +148,12 @@ export default function InstagramGrowthSection() {
 
                     {/* Message Circle Icon - Top Right */}
                     <div
-                      className="absolute z-20 flex items-center justify-center"
+                      className="absolute z-40 flex items-center justify-center"
                       style={{
-                        width: "44.55px",
-                        height: "44.55px",
-                        left: "339.73px",
-                        top: "93.85px",
+                        width: "clamp(30px, 5.5vw, 44.55px)",
+                        height: "clamp(30px, 5.5vw, 44.55px)",
+                        left: "clamp(calc(100% - 60px), 80%, 339.73px)",
+                        top: "clamp(130px, 35%, 93.85px)",
                         background:
                           "linear-gradient(135deg, #51A2FF 0%, #00D3F2 100%)",
                         borderRadius: "50%",
@@ -167,10 +171,10 @@ export default function InstagramGrowthSection() {
                     <div
                       className="absolute z-20 flex items-center justify-center"
                       style={{
-                        width: "64.06px",
-                        height: "64.06px",
-                        left: "383.97px",
-                        top: "63.77px",
+                        width: "clamp(40px, 8vw, 64.06px)",
+                        height: "clamp(40px, 8vw, 64.06px)",
+                        left: "clamp(calc(100% - 30px), 92%, 383.97px)",
+                        top: "clamp(40px, 12%, 63.77px)",
                         background:
                           "linear-gradient(135deg, #E7000B 0%, #FB2C36 100%)",
                         borderRadius: "14px",
@@ -194,10 +198,10 @@ export default function InstagramGrowthSection() {
                     <div
                       className="absolute z-20 flex items-center justify-center"
                       style={{
-                        width: "70.75px",
-                        height: "70.75px",
-                        left: "363.62px",
-                        top: "286.46px",
+                        width: "clamp(45px, 8.8vw, 70.75px)",
+                        height: "clamp(45px, 8.8vw, 70.75px)",
+                        left: "clamp(calc(100% - 55px), calc(100% - 28px), 363.62px)",
+                        top: "clamp(180px, 55%, 286.46px)",
                         background:
                           "linear-gradient(135deg, #000000 0%, #101828 100%)",
                         border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -217,24 +221,23 @@ export default function InstagramGrowthSection() {
 
                   {/* Stats Bar at Bottom */}
                   <div
-                    className="absolute z-20 -bottom-10 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[360px]"
+                    className="absolute z-20 -bottom-8 min-[1024px]:-bottom-10 left-1/2 transform -translate-x-1/2 w-[90%] max-w-[310px] min-[1024px]:max-w-[360px]"
                     style={{
-                      height: "82px",
-                      padding: "16px 0px 16px 24px",
+                      height: "auto",
+                      minHeight: "70px",
+                      padding: "12px 16px 12px 20px",
                       background: "rgba(16, 24, 40, 0.95)",
                       border: "1px solid rgba(255, 255, 255, 0.2)",
                       borderRadius: "14px",
                       boxShadow: "0px 25px 50px -12px rgba(0, 0, 0, 0.25)",
                     }}
                   >
-                    <div className="flex items-center justify-between gap-4 sm:gap-6 w-full max-w-[310px]">
+                    <div className="flex items-center justify-between gap-3 sm:gap-4 min-[1024px]:gap-6 w-full">
                       {/* Followers */}
                       <div className="flex flex-col items-start">
                         <span
-                          className="font-inter font-bold text-white"
+                          className="font-inter font-bold text-white text-[20px] min-[1024px]:text-[24px] leading-[28px] min-[1024px]:leading-[32px]"
                           style={{
-                            fontSize: "24px",
-                            lineHeight: "32px",
                             letterSpacing: "0px",
                             textAlign: "center",
                           }}
@@ -242,10 +245,8 @@ export default function InstagramGrowthSection() {
                           125K
                         </span>
                         <span
-                          className="font-inter font-semibold text-white/60"
+                          className="font-inter font-semibold text-white/60 text-[10px] min-[1024px]:text-[12px] leading-[14px] min-[1024px]:leading-[16px]"
                           style={{
-                            fontSize: "12px",
-                            lineHeight: "16px",
                             letterSpacing: "0px",
                             textAlign: "center",
                           }}
@@ -255,15 +256,13 @@ export default function InstagramGrowthSection() {
                       </div>
 
                       {/* Divider */}
-                      <div className="w-px h-10 bg-white/20" />
+                      <div className="w-px h-8 min-[1024px]:h-10 bg-white/20" />
 
                       {/* Engagement */}
                       <div className="flex flex-col items-start">
                         <span
-                          className="font-inter font-bold text-white"
+                          className="font-inter font-bold text-white text-[20px] min-[1024px]:text-[24px] leading-[28px] min-[1024px]:leading-[32px]"
                           style={{
-                            fontSize: "24px",
-                            lineHeight: "32px",
                             letterSpacing: "0px",
                             textAlign: "center",
                           }}
@@ -271,10 +270,8 @@ export default function InstagramGrowthSection() {
                           4.8M
                         </span>
                         <span
-                          className="font-inter font-semibold text-white/60"
+                          className="font-inter font-semibold text-white/60 text-[10px] min-[1024px]:text-[12px] leading-[14px] min-[1024px]:leading-[16px]"
                           style={{
-                            fontSize: "12px",
-                            lineHeight: "16px",
                             letterSpacing: "0px",
                             textAlign: "center",
                           }}
@@ -284,20 +281,18 @@ export default function InstagramGrowthSection() {
                       </div>
 
                       {/* Divider */}
-                      <div className="w-px h-10 bg-white/20" />
+                      <div className="w-px h-8 min-[1024px]:h-10 bg-white/20" />
 
                       {/* Growth */}
                       <div className="flex flex-col items-start">
                         <div className="flex items-center gap-1">
                           <ArrowUpRight
-                            className="w-5 h-5 text-[#05DF72]"
+                            className="w-4 h-4 min-[1024px]:w-5 min-[1024px]:h-5 text-[#05DF72]"
                             strokeWidth={1.67}
                           />
                           <span
-                            className="font-inter font-bold text-[#05DF72]"
+                            className="font-inter font-bold text-[#05DF72] text-[20px] min-[1024px]:text-[24px] leading-[28px] min-[1024px]:leading-[32px]"
                             style={{
-                              fontSize: "24px",
-                              lineHeight: "32px",
                               letterSpacing: "0px",
                               textAlign: "center",
                             }}
@@ -306,10 +301,8 @@ export default function InstagramGrowthSection() {
                           </span>
                         </div>
                         <span
-                          className="font-inter font-semibold ml-6 text-white/60"
+                          className="font-inter font-semibold ml-5 min-[1024px]:ml-6 text-white/60 text-[10px] min-[1024px]:text-[12px] leading-[14px] min-[1024px]:leading-[16px]"
                           style={{
-                            fontSize: "12px",
-                            lineHeight: "16px",
                             letterSpacing: "0px",
                             textAlign: "center",
                           }}
@@ -323,8 +316,8 @@ export default function InstagramGrowthSection() {
               </div>
             </div>
 
-            {/* Right Side - Content and Metrics */}
-            <div className="relative w-full lg:w-1/2 flex flex-col gap-6">
+            {/* Content Section - Desktop: Right, Mobile: First */}
+            <div className="relative w-full min-[1024px]:w-1/2 flex flex-col gap-6 order-1 min-[1024px]:order-2 items-center min-[1024px]:items-start text-center min-[1024px]:text-left">
               {/* Badge */}
               <div
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg w-fit"
@@ -352,10 +345,8 @@ export default function InstagramGrowthSection() {
               {/* Heading and Description */}
               <div className="flex flex-col gap-4">
                 <h2
-                  className="font-inter font-bold text-white"
+                  className="font-inter font-bold text-white text-[32px] min-[1024px]:text-[48px] leading-[130%]"
                   style={{
-                    fontSize: "48px",
-                    lineHeight: "130%",
                     letterSpacing: "-1.8px",
                     background:
                       "linear-gradient(180deg, #FF8904 0%, #FB64B6 50%, #C27AFF 100%)",
@@ -367,10 +358,8 @@ export default function InstagramGrowthSection() {
                   Grow Your<br />Instagram Followers
                 </h2>
                 <p
-                  className="font-inter font-normal text-[#99A1AF]"
+                  className="font-inter font-normal text-[#99A1AF] text-[16px] min-[1024px]:text-[18px] leading-[24px] min-[1024px]:leading-[29.25px]"
                   style={{
-                    fontSize: "18px",
-                    lineHeight: "29.25px",
                     letterSpacing: "0px",
                     maxWidth: "461px",
                   }}
@@ -382,7 +371,7 @@ export default function InstagramGrowthSection() {
               </div>
 
               {/* Metrics Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-[467px]">
+              <div className="grid grid-cols-2 gap-4 min-[1024px]:gap-6 w-full max-w-[467px] mx-auto">
                 {/* Card 1 - Engagement Rate */}
                 <div
                   className="flex flex-col items-start p-6 rounded-[30px] w-full"
@@ -540,7 +529,7 @@ export default function InstagramGrowthSection() {
               </div>
 
               {/* Social Proof */}
-              <div className="flex items-center gap-3 mt-4">
+              <div className="flex items-center justify-center min-[1024px]:justify-start gap-3 mt-4">
                 <div className="flex items-center">
                   <Image
                     src="/instagram-growth-section-testimonial-1.png"

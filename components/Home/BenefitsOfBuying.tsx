@@ -1,9 +1,24 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import FAQSection from "./FAQSection";
 
 export default function BenefitsOfBuying() {
+  const cardsScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollCardsLeft = () => {
+    if (cardsScrollRef.current) {
+      cardsScrollRef.current.scrollBy({ left: -335, behavior: "smooth" });
+    }
+  };
+
+  const scrollCardsRight = () => {
+    if (cardsScrollRef.current) {
+      cardsScrollRef.current.scrollBy({ left: 335, behavior: "smooth" });
+    }
+  };
+
   const benefits = [
     {
       id: 1,
@@ -27,44 +42,20 @@ export default function BenefitsOfBuying() {
 
   return (
     <section className="relative w-full bg-black py-24 sm:py-32">
-      <div
-        className="flex flex-col items-center mx-auto"
-        style={{
-          width: "1240px",
-          maxWidth: "100%",
-          gap: "45px",
-        }}
-      >
+      <div className="absolute -right-90 top-200 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+      <div className="absolute -left-90 top-330 z-1 rounded-full w-96 h-96 bg-blue-600 opacity-80 blur-3xl" />
+
+      <div className="flex flex-col items-center gap-[45px] w-full max-w-[1240px] mx-auto px-6">
         {/* Header Section */}
-        <div
-          className="flex flex-col items-center"
-          style={{
-            width: "1240px",
-            maxWidth: "100%",
-            gap: "30px",
-          }}
-        >
+        <div className="flex flex-col items-center gap-6 min-[600px]:gap-[30px] w-full max-w-[1240px]">
           {/* Heading */}
-          <h2
-            className="font-inter text-center capitalize"
-            style={{
-              fontFamily: "Inter",
-              fontWeight: 600,
-              fontSize: "48px",
-              lineHeight: "88px",
-              color: "#FFFFFF",
-              width: "1267px",
-              maxWidth: "100%",
-              textAlign: "center",
-            }}
-          >
+          <h2 className="font-inter font-semibold text-center capitalize text-[32px] min-[600px]:text-[48px] leading-[44px] min-[600px]:leading-[88px] text-white w-full max-w-[1267px]">
             Benefits of Buying{" "}
             <span
+              className="bg-clip-text"
               style={{
-                background: "linear-gradient(90deg, #018DFF 48%, #00FFFF 85%)",
-                WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                backgroundImage: "linear-gradient(90deg, #018DFF 48%, #00FFFF 85%)",
               }}
             >
               Instagram Followers
@@ -72,116 +63,114 @@ export default function BenefitsOfBuying() {
           </h2>
 
           {/* Description */}
-          <p
-            className="font-inter text-center"
-            style={{
-              fontFamily: "Inter",
-              fontWeight: 400,
-              fontSize: "18px",
-              lineHeight: "32px",
-              color: "rgba(153, 161, 175, 1)",
-              width: "1050px",
-              maxWidth: "100%",
-              textAlign: "center",
-            }}
-          >
+          <p className="font-inter font-normal text-center text-base min-[600px]:text-[18px] leading-7 min-[600px]:leading-8 text-[#99A1AF] w-full max-w-[1050px]">
             Buying Instagram followers can quickly boost your credibility and visibility, helping you attract real engagement and grow faster. A larger follower count builds trust, increases exposure, and makes your profile more appealing to brands, collaborators, and new audiences. With trusted providers like Eagle Likes, you can grow safely and effectively while keeping your account secure.
           </p>
         </div>
 
-        {/* Benefits Cards */}
-        <div
-          className="flex flex-row items-center flex-wrap justify-center"
-          style={{
-            width: "1078px",
-            maxWidth: "100%",
-            gap: "20px",
-          }}
-        >
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.id}
-              className="relative"
-              style={{
-                width: "346px",
-                height: "429px",
-                backgroundColor: "rgba(255, 255, 255, 0.05)",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
-                boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.1)",
-                borderRadius: "40px",
-              }}
-            >
+        {/* Benefits Cards Section */}
+        <div className="flex flex-col items-start gap-[15.968px] min-[600px]:gap-5 w-full max-w-[1078px] relative">
+          {/* Mobile: Horizontal Scroll Container */}
+          <div
+            ref={cardsScrollRef}
+            className="flex gap-[15.968px] min-[600px]:hidden items-center w-full overflow-x-auto scrollbar-hide"
+          >
+            {benefits.map((benefit) => (
               <div
-                className="flex flex-col items-center"
-                style={{
-                  padding: "25px 0",
-                  gap: "24px",
-                  width: benefit.id === 1 ? "326px" : "281.99px",
-                  margin: "0 auto",
-                }}
+                key={benefit.id}
+                className="relative shrink-0 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] h-[285px] min-[600px]:h-[429px] rounded-[40px] w-[319.36px] shadow-[0px_0px_8px_rgba(0,0,0,0.1)]"
               >
-                {/* Icon */}
-                <div className="flex items-center justify-center" style={{ width: "86px", height: "86px" }}>
-                  {benefit.icon && (
-                    <Image
-                      src={benefit.icon}
-                      alt={benefit.title}
-                      width={86}
-                      height={86}
-                      className="object-contain"
-                    />
-                  )}
-                </div>
+                <div className="flex flex-col items-center py-[19.96px] min-[600px]:py-[25px] gap-[19.162px] min-[600px]:gap-6 mx-auto w-[260.278px] min-[600px]:w-full min-[600px]:px-4">
+                  {/* Icon */}
+                  <div className="flex items-center justify-center shrink-0 size-[68.662px] min-[600px]:size-[86px]">
+                    {benefit.icon && (
+                      <Image
+                        src={benefit.icon}
+                        alt={benefit.title}
+                        width={86}
+                        height={86}
+                        className="object-contain w-full h-full"
+                      />
+                    )}
+                  </div>
 
-                {/* Content */}
-                <div
-                  className="flex flex-col items-center"
-                  style={{
-                    gap: "28px",
-                    width: benefit.id === 1 ? "326px" : "281.99px",
-                  }}
-                >
-                  <h3
-                    className="font-open-sans text-center capitalize"
-                    style={{
-                      fontFamily: "Open Sans",
-                      fontWeight: 600,
-                      fontSize: "26px",
-                      lineHeight: "35px",
-                      color: "#FFFFFF",
-                      width: benefit.id === 1 ? "302px" : benefit.id === 2 ? "274px" : "281.99px",
-                      textAlign: "center",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {benefit.title}
-                  </h3>
-                  <p
-                    className="font-open-sans text-center"
-                    style={{
-                      fontFamily: "Open Sans",
-                      fontWeight: 400,
-                      fontSize: "15px",
-                      lineHeight: "26.03px",
-                      color: "#99A1AF",
-                      width: "302px",
-                      textAlign: "center",
-                    }}
-                  >
-                    {benefit.description}
-                  </p>
+                  {/* Content */}
+                  <div className="flex flex-col items-center gap-[22.355px] min-[600px]:gap-7 text-center w-full">
+                    <h3 className="font-open-sans font-semibold text-center capitalize text-[20.758px] min-[600px]:text-[26px] leading-[27.944px] min-[600px]:leading-[35px] text-white w-full">
+                      {benefit.title}
+                    </h3>
+                    <p className="font-open-sans font-normal text-center text-[11.976px] min-[600px]:text-[15px] leading-[20.785px] min-[600px]:leading-[26.03px] text-[#99A1AF] w-full">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Desktop: Wrap Layout */}
+          <div className="hidden min-[600px]:flex flex-row items-center flex-wrap justify-center gap-5 w-full">
+            {benefits.map((benefit) => (
+              <div
+                key={benefit.id}
+                className="relative shrink-0 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.15)] h-[429px] rounded-[40px] w-full min-[1127px]:w-[346px] shadow-[0px_0px_8px_rgba(0,0,0,0.1)]"
+              >
+                <div className="flex flex-col items-center py-[25px] gap-6 mx-auto w-full px-4">
+                  {/* Icon */}
+                  <div className="flex items-center justify-center shrink-0 size-[86px]">
+                    {benefit.icon && (
+                      <Image
+                        src={benefit.icon}
+                        alt={benefit.title}
+                        width={86}
+                        height={86}
+                        className="object-contain w-full h-full"
+                      />
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-col items-center gap-7 text-center w-full">
+                    <h3 className="font-open-sans font-semibold text-center capitalize text-[26px] leading-[35px] text-white w-full">
+                      {benefit.title}
+                    </h3>
+                    <p className="font-open-sans font-normal text-center text-[15px] leading-[26.03px] text-[#99A1AF] w-full max-w-[302px]">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Navigation Buttons */}
+          <div className="flex gap-[6.643px] items-center justify-center min-[600px]:hidden mt-4 w-full">
+            <button
+              onClick={scrollCardsLeft}
+              className="flex items-center justify-center relative shrink-0 size-[27.679px] bg-black border border-[rgba(255,255,255,0.4)] rounded-full"
+              aria-label="Scroll left"
+            >
+              <svg width="14" height="17" viewBox="0 0 14 17" fill="none">
+                <path d="M5 8.5L9 4.5L9 12.5L5 8.5Z" fill="rgba(255,255,255,0.4)" />
+              </svg>
+            </button>
+            <button
+              onClick={scrollCardsRight}
+              className="flex items-center justify-center relative shrink-0 size-[27.679px] bg-[#018DFF] rounded-full"
+              aria-label="Scroll right"
+            >
+              <svg width="14" height="17" viewBox="0 0 14 17" fill="none">
+                <path d="M9 8.5L5 4.5L5 12.5L9 8.5Z" fill="white" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* FAQ Section */}
-        <div style={{ marginTop: "202px" }}>
+        <div className="mt-[50px] min-[600px]:mt-[202px] w-full">
           <FAQSection />
         </div>
       </div>
     </section>
   );
 }
-
